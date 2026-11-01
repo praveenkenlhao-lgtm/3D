@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070d18">
+  <meta name="description" content="สไลด์แนะนำ Resin 3D Printing สำหรับผู้เริ่มต้น">
+  <title>Resin 3D Printing — สำหรับผู้เริ่มต้น</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="slides.js" defer></script>
+</head>
+<body>
+  <main class="presentation" aria-label="สไลด์ Resin 3D Printing">
+    <header class="topbar">
+      <a class="brand" href="#slide-1" aria-label="กลับไปสไลด์แรก">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span><strong>Resin 3D Printing</strong><small>คู่มือสำหรับผู้เริ่มต้น</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="live-label"><i></i> PRESENTATION</span>
+        <div class="zoom-controls" role="group" aria-label="ควบคุมการซูม">
+          <button class="icon-button zoom-button" id="zoom-out" type="button" aria-label="ซูมออก" title="ซูมออก">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="M16 16l5 5M7.8 10.8h6"/></svg>
+          </button>
+          <output class="zoom-level" id="zoom-level" aria-live="polite">100%</output>
+          <button class="icon-button zoom-button" id="zoom-in" type="button" aria-label="ซูมเข้า" title="ซูมเข้า">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="M16 16l5 5M10.8 7.8v6M7.8 10.8h6"/></svg>
+          </button>
+        </div>
+        <button class="icon-button" id="overview-toggle" type="button" aria-expanded="false" aria-controls="overview" title="แสดงภาพรวมสไลด์">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>
+          <span>ภาพรวม</span>
+        </button>
+        <button class="icon-button" id="fullscreen-toggle" type="button" title="เต็มหน้าจอ">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>
+          <span>เต็มจอ</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="stage" aria-label="พื้นที่แสดงสไลด์">
+      <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+      <div class="slides" id="slides" tabindex="0" aria-live="polite"></div>
+      <button class="edge-nav prev" id="prev" type="button" aria-label="สไลด์ก่อนหน้า">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="edge-nav next" id="next" type="button" aria-label="สไลด์ถัดไป">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <aside class="overview" id="overview" aria-label="เลือกสไลด์" hidden>
+        <div class="overview-heading"><span>เลือกสไลด์</span><small>10 หน้า</small></div>
+        <div class="thumbnail-grid" id="thumbnails"></div>
+      </aside>
+    </section>
+
+    <footer class="controls">
+      <div class="slide-count"><span id="current-number">01</span><span class="count-divider">/</span><span class="total-number">10</span></div>
+      <div class="progress-track" role="progressbar" aria-label="ความคืบหน้าของสไลด์" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1"><div class="progress-fill" id="progress"></div></div>
+      <div class="control-group">
+        <span class="keyboard-hint"><kbd>←</kbd><kbd>→</kbd> เลื่อนสไลด์</span>
+        <button class="round-button" id="prev-bottom" type="button" aria-label="ย้อนกลับ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="round-button forward" id="next-bottom" type="button" aria-label="ถัดไป"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
