@@ -1,5 +1,5 @@
 (() => {
-  const total = 10;
+  const total = 11;
   const slidesHost = document.querySelector('#slides');
   const thumbsHost = document.querySelector('#thumbnails');
   const currentLabel = document.querySelector('#current-number');
@@ -11,7 +11,7 @@
   let touchStartX = null;
 
   const pad = value => String(value).padStart(2, '0');
-  const slidePath = number => `slides/slide-${pad(number)}.jpg`;
+  const slidePath = number => number === 1 ? 'slides/group-members.png' : `slides/slide-${pad(number - 1)}.jpg`;
 
   for (let number = 1; number <= total; number += 1) {
     const slide = document.createElement('article');
@@ -21,7 +21,7 @@
     slide.setAttribute('aria-hidden', 'true');
     const img = document.createElement('img');
     img.src = slidePath(number);
-    img.alt = `สไลด์ Resin 3D Printing หน้า ${number}`;
+    img.alt = number === 1 ? 'รายชื่อสมาชิกกลุ่ม 3D Print Resin' : `สไลด์ Resin 3D Printing หน้า ${number - 1}`;
     img.fetchPriority = number === 1 ? 'high' : 'auto';
     img.draggable = false;
     slide.append(img);
